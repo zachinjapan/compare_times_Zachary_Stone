@@ -1,6 +1,10 @@
-const timesAreValid = require("./helpers");
+import { timesAreValid } from "./helpers";
 
-const checkIfTimeIsInRange = (currentTime, startTime, endTime) => {
+export const checkIfTimeIsInRange = (
+  currentTime: number,
+  startTime: number,
+  endTime: number
+): boolean => {
   // 1. check inputs
 
   if (!timesAreValid(currentTime, startTime, endTime)) {
@@ -26,5 +30,3 @@ const checkIfTimeIsInRange = (currentTime, startTime, endTime) => {
 
   throw new Error("An error has occured. Please check inputs");
 };
-
-module.exports = checkIfTimeIsInRange;

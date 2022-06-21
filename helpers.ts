@@ -1,11 +1,11 @@
-const timesAreValid = (currentTime, startTime, endTime) => {
+export const timesAreValid = (
+  currentTime: number,
+  startTime: number,
+  endTime: number
+): Boolean => {
   const times = [currentTime, startTime, endTime];
 
   for (let x = 0; x < times.length; x++) {
-    // not a number
-    if (/\D/gm.test(times[x])) {
-      return false;
-    }
     // outside of 24 hour range
     if (times[x] > 23 || times[x] < 0) {
       return false;
@@ -14,5 +14,3 @@ const timesAreValid = (currentTime, startTime, endTime) => {
 
   return true;
 };
-
-module.exports = timesAreValid;
