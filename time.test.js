@@ -1,17 +1,21 @@
 const checkIfTimeIsInRange = require("./time");
 
 describe("inputs are correctly validated", () => {
-  it("-3, 4, 0 =>  error", () => {
+  it("three, japan, 23 =>  error", () => {
     expect(() => {
-      checkIfTimeIsInRange(-3, 4, 0);
-    }).toThrow();
-  });
-
-  it("24, 0, 0 => error", () => {
-    expect(() => {
-      checkIfTimeIsInRange(24, 0, 0);
+      checkIfTimeIsInRange("three", "japan", 23);
     }).toThrow();
   }),
+    it("-3, 4, 0 =>  error", () => {
+      expect(() => {
+        checkIfTimeIsInRange(-3, 4, 0);
+      }).toThrow();
+    }),
+    it("24, 0, 0 => error", () => {
+      expect(() => {
+        checkIfTimeIsInRange(24, 0, 0);
+      }).toThrow();
+    }),
     it("'12:43:42', 10, 0 => error", () => {
       expect(() => {
         checkIfTimeIsInRange("12:43:42", 10, 0);
