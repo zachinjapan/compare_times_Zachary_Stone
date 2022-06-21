@@ -14,17 +14,17 @@ export const checkIfTimeIsInRange = (
   // 2. compare times
 
   if (startTime === endTime) {
-    //　午前6時から次の午前6時の間ということなら、いつでもtrueじゃないですか？間違ったら、すみません。
+    //　例えば、午前6時から次の午前6時の間ということなら、いつでもtrueじゃないですか？間違ったら、すみません。
     return true;
   }
 
   if (startTime < endTime) {
-    // 例えば６時から８時の間です。
+    // 例えば、６時から８時の間です。
     return currentTime >= startTime && currentTime < endTime;
   }
 
   if (startTime > endTime) {
-    //例えば１０時から次の日の４時の間です。
+    //例えば、１０時から次の日の４時の間です。
     return currentTime >= startTime || currentTime < endTime;
   }
 
